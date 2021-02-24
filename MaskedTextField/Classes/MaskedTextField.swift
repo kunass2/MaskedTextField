@@ -108,9 +108,7 @@ open class MaskedTextField: UITextField, UITextFieldDelegate {
     /// prefix for starting value, always included, cannot be changed or removed while typing
     public var prefix = "" {
         didSet {
-            if !unmaskedText.starts(with: prefix), !prefix.isEmpty {
-                unmaskedText = prefix + unmaskedText
-            }
+            unmaskedText = prefix
         }
     }
 

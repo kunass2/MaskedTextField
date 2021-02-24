@@ -8,10 +8,10 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftMaskedTextField'
-  s.version          = '1.2'
+  s.version          = '1.3'
   s.summary          = 'Easily manage masking in your UITextField.'
   s.description      = "Looking for simple Swift library to manage masking in UItextField? This one is for you:)"
-  s.swift_version    = '4.2'
+  s.swift_version    = '5.0'
   s.homepage         = 'https://github.com/kunass2/MaskedTextField'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'kunass2' => 'bartekss2@icloud.com' }
