@@ -1,0 +1,6 @@
+framework module Pods_MaskedTextField_Example {
+  umbrella header "Pods-MaskedTextField_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

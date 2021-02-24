@@ -8,21 +8,11 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MaskedTextField'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of MaskedTextField.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
+  s.version          = '1.0'
+  s.summary          = 'Easily manage masking in your UITextField.'
+  s.description      = "Looking for simple Swift library to manage masking in UItextField? This one is for you:)"
+  s.swift_version    = '4.2'
   s.homepage         = 'https://github.com/kunass2/MaskedTextField'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'kunass2' => 'bartekss2@icloud.com' }
   s.source           = { :git => 'https://github.com/kunass2/MaskedTextField.git', :tag => s.version.to_s }
