@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'MaskedTextField'
-  s.version          = '1.0'
+  s.name             = 'SwiftMaskedTextField'
+  s.version          = '1.1'
   s.summary          = 'Easily manage masking in your UITextField.'
   s.description      = "Looking for simple Swift library to manage masking in UItextField? This one is for you:)"
   s.swift_version    = '4.2'
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/kunass2/MaskedTextField.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '11.0'
 
   s.source_files = 'MaskedTextField/Classes/**/*'
   
