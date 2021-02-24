@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftMaskedTextField'
-  s.version          = '1.1'
+  s.version          = '1.2'
   s.summary          = 'Easily manage masking in your UITextField.'
   s.description      = "Looking for simple Swift library to manage masking in UItextField? This one is for you:)"
   s.swift_version    = '4.2'

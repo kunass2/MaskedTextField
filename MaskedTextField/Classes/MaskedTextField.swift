@@ -68,7 +68,11 @@ open class MaskedTextField: UITextField, UITextFieldDelegate {
     /// returns unmaskedText, only characters defined as placeholderCharacter in patternMask
     public var unmaskedText: String {
         get {
-            localUnmaskedText
+            if isMaskingTurnedOn {
+                return localUnmaskedText
+            } else {
+                return text ?? ""
+            }
         }
         set {
             localUnmaskedText = newValue
