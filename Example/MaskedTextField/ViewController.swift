@@ -62,5 +62,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self?.unmaskedTextLabel.text = self?.textField.unmaskedText
             self?.unmaskedTextFullLabel.text = self?.textField.unmaskedTextWithAllowedCharacters
         }.disposed(by: bag)
+        
+        textField.unmaskedText = "111/222/333"
+        textField.sendActions(for: .editingChanged)
     }
 }

@@ -75,7 +75,11 @@ open class MaskedTextField: UITextField, UITextFieldDelegate {
             }
         }
         set {
-            localUnmaskedText = newValue
+            var temporaryUnmaskedText = newValue
+            for character in allowedCharactersForUnmaskedText {
+                temporaryUnmaskedText = temporaryUnmaskedText.replacingOccurrences(of: String(character), with: "")
+            }
+            localUnmaskedText = temporaryUnmaskedText
             updateText()
             setCursorPositionToActivePlace()
         }
@@ -143,6 +147,9 @@ open class MaskedTextField: UITextField, UITextFieldDelegate {
                 value += String(temporaryUnmaskedText.removeFirst())
             } else {
                 value += String(character)
+                if !temporaryUnmaskedText.isEmpty, String(character) == String(temporaryUnmaskedText.first!) {
+                    temporaryUnmaskedText.removeFirst()
+                }
             }
         }
         text = value
