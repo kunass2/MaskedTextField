@@ -80,8 +80,12 @@ open class MaskedTextField: UITextField, UITextFieldDelegate {
                 temporaryUnmaskedText = temporaryUnmaskedText.replacingOccurrences(of: String(character), with: "")
             }
             localUnmaskedText = temporaryUnmaskedText
-            updateText()
-            setCursorPositionToActivePlace()
+            if isMaskingTurnedOn {
+                updateText()
+                setCursorPositionToActivePlace()
+            } else {
+                text = localUnmaskedText
+            }
         }
     }
 
@@ -91,6 +95,9 @@ open class MaskedTextField: UITextField, UITextFieldDelegate {
     /// if you use "A ___ + ___" as a patternMask, "_" as placeholderCharacter and ["A", "+"] for allowedCharactersForUnmaskedText
     /// then you will be returned "A___+___" from unmaskedTextWithAllowedCharacters instead of "______"
     public var unmaskedTextWithAllowedCharacters: String {
+        if !isMaskingTurnedOn {
+            return unmaskedText
+        }
         var value = prefix
         var temporaryUnmaskedText = unmaskedTextWithoutPrefix
         for character in patternMask {
