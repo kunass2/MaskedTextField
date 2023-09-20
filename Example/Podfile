@@ -1,16 +1,14 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '12.0'
 
 target 'MaskedTextField_Example' do
-  pod 'MaskedTextField', :path => '../'
+  pod 'SwiftMaskedTextField', :path => '../'
   pod 'SnapKit'
   pod 'RxSwift'
   pod 'RxCocoa'
 
   target 'MaskedTextField_Tests' do
     inherit! :search_paths
-
-    
   end
 end

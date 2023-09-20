@@ -5,26 +5,29 @@
 //  Created by kunass2 on 02/24/2021.
 //  Copyright (c) 2021 kunass2. All rights reserved.
 //
-
 import UIKit
-import MaskedTextField
+import SwiftMaskedTextField
 import SnapKit
 import RxSwift
 import RxCocoa
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, MaskedTextFieldDelegate {
     private let bag = DisposeBag()
     private let textField: MaskedTextField = {
         let textField = MaskedTextField()
-        textField.patternMask = " ___/___/___"
+//        textField.patternMask = " ___/___/___"
+        textField.patternMask = "___-___-___"
         textField.placeholderCharacter = "_"
-        textField.prefix = "+68"
-        textField.allowedCharactersForUnmaskedText = ["/"]
+//        textField.prefix = "+48"
+//        textField.prefix = ""
+//        textField.allowedCharactersForUnmaskedText = ["/"]
+        textField.allowedCharactersForUnmaskedText = ["-"]
         textField.textColor = .white
         textField.backgroundColor = .darkGray
-        textField.keyboardType = .numberPad
+        textField.keyboardType = .phonePad
         textField.textAlignment = .center
         textField.tintColor = .white
+        textField.textContentType = .telephoneNumber
         return textField
     }()
     private let unmaskedTextLabel: UILabel = {
@@ -63,7 +66,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self?.unmaskedTextFullLabel.text = self?.textField.unmaskedTextWithAllowedCharacters
         }.disposed(by: bag)
         
-        textField.unmaskedText = "111/222/333"
+//        textField.unmaskedText = "111/222/333"
         textField.sendActions(for: .editingChanged)
+        textField.maskedTextFieldDelegate = self
+    }
+    
+    // MARK: - MaskedTextFieldDelegate
+    
+    func replacedText(for text: String, identifier: String) -> String? {
+        text.replacingOccurrences(of: " ", with: "")
     }
 }

@@ -7,7 +7,13 @@
 //
 import UIKit
 
+public protocol MaskedTextFieldDelegate: AnyObject {
+    func replacedText(for text: String, identifier: String) -> String?
+}
+
 open class MaskedTextField: UITextField, UITextFieldDelegate {
+    public var identifier = ""
+    public weak var maskedTextFieldDelegate: MaskedTextFieldDelegate?
     private var localUnmaskedText = ""
 
     /// array of characters which will be returned as unmaskedTextWithAllowedCharacters
@@ -210,6 +216,10 @@ open class MaskedTextField: UITextField, UITextFieldDelegate {
         shouldChangeCharactersIn range: NSRange,
         replacementString string: String
     ) -> Bool {
+        if string.count > 1 && isMaskingTurnedOn {
+            localUnmaskedText = maskedTextFieldDelegate?.replacedText(for: string, identifier: identifier) ?? string
+            return true
+        }
         let value = text!.replacingCharacters(in: Range(range, in: text!)!, with: string)
         let shouldChange = value.hasPrefix(maximumPrefix) && string.count <= 1
         if shouldChange {

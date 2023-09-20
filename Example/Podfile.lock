@@ -1,5 +1,4 @@
 PODS:
-  - MaskedTextField (1.0)
   - RxCocoa (6.0.0):
     - RxRelay (= 6.0.0)
     - RxSwift (= 6.0.0)
@@ -7,12 +6,13 @@ PODS:
     - RxSwift (= 6.0.0)
   - RxSwift (6.0.0)
   - SnapKit (4.2.0)
+  - SwiftMaskedTextField (1.5)
 
 DEPENDENCIES:
-  - MaskedTextField (from `../`)
   - RxCocoa
   - RxSwift
   - SnapKit
+  - SwiftMaskedTextField (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -22,16 +22,16 @@ SPEC REPOS:
     - SnapKit
 
 EXTERNAL SOURCES:
-  MaskedTextField:
+  SwiftMaskedTextField:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MaskedTextField: 41d7a89095973e1683f72ecd180bb0b27949163c
   RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
   RxRelay: 8d593be109c06ea850df027351beba614b012ffb
   RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftMaskedTextField: e69fb4a0b2b2aa3abf7dfee716acc0443711fcb9
 
-PODFILE CHECKSUM: bfc41d4f74a50506217992dad9b26b7781ebd21a
+PODFILE CHECKSUM: 972e46b9561eec6b834df65cb34cd942506c9d75
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

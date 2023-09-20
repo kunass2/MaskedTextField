@@ -1,5 +1,5 @@
 import XCTest
-import MaskedTextField
+import SwiftMaskedTextField
 
 class Tests: XCTestCase {
     
