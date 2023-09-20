@@ -216,7 +216,7 @@ open class MaskedTextField: UITextField, UITextFieldDelegate {
         shouldChangeCharactersIn range: NSRange,
         replacementString string: String
     ) -> Bool {
-        if string.count > 1 && isMaskingTurnedOn {
+        if string.count > 1 {
             localUnmaskedText = maskedTextFieldDelegate?.replacedText(for: string, identifier: identifier) ?? string
             return true
         }
