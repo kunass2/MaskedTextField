@@ -8,11 +8,10 @@
 import UIKit
 
 public protocol MaskedTextFieldDelegate: AnyObject {
-    func replacedText(for text: String, identifier: String) -> String?
+    func replacedText(for text: String, type: UITextContentType?) -> String?
 }
 
 open class MaskedTextField: UITextField, UITextFieldDelegate {
-    public var identifier = ""
     public weak var maskedTextFieldDelegate: MaskedTextFieldDelegate?
     private var localUnmaskedText = ""
 
@@ -217,7 +216,7 @@ open class MaskedTextField: UITextField, UITextFieldDelegate {
         replacementString string: String
     ) -> Bool {
         if string.count > 1 {
-            localUnmaskedText = maskedTextFieldDelegate?.replacedText(for: string, identifier: identifier) ?? string
+            localUnmaskedText = maskedTextFieldDelegate?.replacedText(for: string, type: textContentType) ?? string
             return true
         }
         let value = text!.replacingCharacters(in: Range(range, in: text!)!, with: string)

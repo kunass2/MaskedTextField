@@ -73,7 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MaskedTextFieldDele
     
     // MARK: - MaskedTextFieldDelegate
     
-    func replacedText(for text: String, identifier: String) -> String? {
+    func replacedText(for text: String, type: UITextContentType?) -> String? {
         text.replacingOccurrences(of: " ", with: "")
     }
 }
